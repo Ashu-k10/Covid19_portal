@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COVID-19 Information Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>COVID-19 Information Portal</h1>
+  <nav><a href="#stats">Statistics</a><a href="#safety">Precautions</a>
+       <a href="#account">Account</a><a href="#vaccine">Vaccination</a><a href="#comments">Comments</a></nav>
+</header>
+
+<main>
+  <section id="stats">
+    <h2>Live Statistics <small id="source"></small></h2>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="safety">
+    <h2>Precautions</h2>
+    <ul class="tips">
+      <li>Wear a mask in crowded places</li><li>Wash hands for 20 seconds</li>
+      <li>Maintain physical distance</li><li>Get vaccinated and take booster doses</li>
+    </ul>
+  </section>
+
+  <section id="account">
+    <h2>Create Account / Login</h2>
+    <div class="two-col">
+      <form id="signupForm" novalidate>
+        <h3>Sign Up</h3>
+        <label>Full Name<input name="full_name" data-rule="full_name"><span class="err">3-30 letters only</span></label>
+        <label>Email<input name="email" data-rule="email"><span class="err">Enter a valid email</span></label>
+        <label>Username<input name="username" data-rule="username"><span class="err">4-16 chars, start with a letter</span></label>
+        <label>Password<input type="password" name="password" data-rule="password"><span class="err">8-20 chars: upper, lower, digit, special</span></label>
+        <button>Register</button><p class="msg"></p>
+      </form>
+      <form id="loginForm" novalidate>
+        <h3>Login</h3>
+        <label>Username<input name="username" data-rule="username"><span class="err">Invalid username</span></label>
+        <label>Password<input type="password" name="password" data-rule="password"><span class="err">Invalid password format</span></label>
+        <button>Login</button><p class="msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="vaccine">
+    <h2>Vaccination Registration</h2>
+    <form id="vaccineForm" novalidate>
+      <label>Full Name<input name="full_name" data-rule="full_name"><span class="err">3-30 letters only</span></label>
+      <label>Age<input name="age" data-rule="age"><span class="err">Age must be 18-119</span></label>
+      <label>Mobile<input name="phone" data-rule="phone"><span class="err">10 digits, starts with 6-9</span></label>
+      <label>Email<input name="email" data-rule="email"><span class="err">Enter a valid email</span></label>
+      <label>City<input name="city" data-rule="city"><span class="err">Letters only</span></label>
+      <label>Dose<select name="dose"><option>First</option><option>Second</option><option>Booster</option></select></label>
+      <button>Submit Registration</button><p class="msg"></p>
+    </form>
+  </section>
+
+  <section id="comments">
+    <h2>Comments</h2>
+    <form id="commentForm" novalidate>
+      <label>Your comment<textarea name="comment" data-rule="comment" rows="3"></textarea>
+        <span class="err">3-300 characters, no script tags</span></label>
+      <button>Post Comment</button><p class="msg"></p>
+    </form>
+    <ul id="commentList"></ul>
+  </section>
+</main>
+
+<footer>Mini Project - Software Testing and Quality Assurance</footer>
+<script src="validators.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
